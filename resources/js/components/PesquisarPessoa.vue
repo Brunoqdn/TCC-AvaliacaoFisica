@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <h1>Pesquisar Pessoa</h1>
+  <div class="container mt-5">
+    <h1 class="text-center">Pesquisar Pessoa</h1>
+    
     <div class="form-group">
       <label for="nome">Nome:</label>
       <input
@@ -11,55 +12,67 @@
         placeholder="Digite o nome"
       />
     </div>
-    <button @click="pesquisar" class="btn btn-primary">Pesquisar</button>
+    
+    <div class="d-flex justify-content-center mt-4">
+      <button @click="pesquisar" class="btn btn-primary mx-2">Pesquisar</button>
+      <button @click="voltarParaMedidas" class="btn btn-secondary mx-2">Voltar para Medidas</button>
+    </div>
 
-    <div v-if="resultados.length">
-      <h2>Resultados:</h2>
-      <ul>
-        <li v-for="resultado in resultados" :key="resultado.id">
-          <strong>Nome:</strong> {{ resultado.nome }}<br>
-          <strong>Idade:</strong> {{ resultado.idade }} anos<br>
-          <strong>Sexo:</strong> {{ resultado.sexo }}<br>
-          <strong>Peso:</strong> {{ resultado.peso }} kg<br>
-          <strong>Altura:</strong> {{ resultado.altura }} cm<br>
-          <strong>IMC:</strong> {{ resultado.imc }}<br>
-          <strong>Flexibilidade:</strong> 
-          <span :class="getClass(resultado.flexibilidadeAvaliacao)">
-            {{ resultado.flexibilidade }} - {{ resultado.flexibilidadeAvaliacao }}
-          </span><br>
-          <strong>Abdominais:</strong> 
-          <span :class="getClass(resultado.abdominaisAvaliacao)">
-            {{ resultado.abdominais }} - {{ resultado.abdominaisAvaliacao }}
-          </span><br>
-          <strong>Corrida 6 minutos:</strong> 
-          <span :class="getClass(resultado.corrida6minAvaliacao)">
-            {{ resultado.corrida6min }} metros - {{ resultado.corrida6minAvaliacao }}
-          </span><br>
-          <strong>Medicine Ball:</strong> 
-          <span :class="getClass(resultado.medicineBallAvaliacao)">
-            {{ resultado.medicineBall }} cm - {{ resultado.medicineBallAvaliacao }}
-          </span><br>
-          <strong>Salto Horizontal:</strong> 
-          <span :class="getClass(resultado.saltoHorizontalAvaliacao)">
-            {{ resultado.saltoHorizontal }} cm - {{ resultado.saltoHorizontalAvaliacao }}
-          </span><br>
-          <strong>Quadrado:</strong> 
-          <span :class="getClass(resultado.quadradoAvaliacao)">
-            {{ resultado.quadrado }} segundos e centésimos - {{ resultado.quadradoAvaliacao }}
-          </span><br>
-          <strong>Corrida 20 metros:</strong> 
-          <span :class="getClass(resultado.corrida20mAvaliacao)">
-            {{ resultado.corrida20m }} segundos e centésimos - {{ resultado.corrida20mAvaliacao }}
-          </span><br><br>
+    <div v-if="resultados.length" class="mt-5">
+      <h2 class="text-center">Resultados:</h2>
+      <ul class="list-group">
+        <li v-for="resultado in resultados" :key="resultado.id" class="list-group-item">
+          <p><strong>Nome:</strong> {{ resultado.nome }}</p>
+          <p><strong>Idade:</strong> {{ resultado.idade }} anos</p>
+          <p><strong>Sexo:</strong> {{ resultado.sexo }}</p>
+          <p><strong>Peso:</strong> {{ resultado.peso }} kg</p>
+          <p><strong>Altura:</strong> {{ resultado.altura }} cm</p>
+          <p><strong>IMC:</strong> {{ resultado.imc }}</p>
+          <p><strong>Flexibilidade:</strong> 
+            <span :class="getClass(resultado.flexibilidadeAvaliacao)">
+              {{ resultado.flexibilidade }} - {{ resultado.flexibilidadeAvaliacao }}
+            </span>
+          </p>
+          <p><strong>Abdominais:</strong> 
+            <span :class="getClass(resultado.abdominaisAvaliacao)">
+              {{ resultado.abdominais }} - {{ resultado.abdominaisAvaliacao }}
+            </span>
+          </p>
+          <p><strong>Corrida 6 minutos:</strong> 
+            <span :class="getClass(resultado.corrida6minAvaliacao)">
+              {{ resultado.corrida6min }} metros - {{ resultado.corrida6minAvaliacao }}
+            </span>
+          </p>
+          <p><strong>Medicine Ball:</strong> 
+            <span :class="getClass(resultado.medicineBallAvaliacao)">
+              {{ resultado.medicineBall }} cm - {{ resultado.medicineBallAvaliacao }}
+            </span>
+          </p>
+          <p><strong>Salto Horizontal:</strong> 
+            <span :class="getClass(resultado.saltoHorizontalAvaliacao)">
+              {{ resultado.saltoHorizontal }} cm - {{ resultado.saltoHorizontalAvaliacao }}
+            </span>
+          </p>
+          <p><strong>Quadrado:</strong> 
+            <span :class="getClass(resultado.quadradoAvaliacao)">
+              {{ resultado.quadrado }} segundos e centésimos - {{ resultado.quadradoAvaliacao }}
+            </span>
+          </p>
+          <p><strong>Corrida 20 metros:</strong> 
+            <span :class="getClass(resultado.corrida20mAvaliacao)">
+              {{ resultado.corrida20m }} segundos e centésimos - {{ resultado.corrida20mAvaliacao }}
+            </span>
+          </p><br>
         </li>
       </ul>
     </div>
 
-    <div v-if="erro" class="alert alert-danger">
+    <div v-if="erro" class="alert alert-danger mt-3">
       {{ erro }}
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -101,6 +114,11 @@ export default {
           console.error('Erro ao pesquisar pessoa:', error);
         });
     },
+
+    voltarParaMedidas() {
+    window.location.href = '/medidas';
+  },
+
     getClass(avaliacao) {
       switch (avaliacao) {
         case 'Fraco':
@@ -1250,16 +1268,6 @@ h1 {
   box-sizing: border-box;
 }
 
-.btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 .btn:hover {
   background-color: #0056b3;
