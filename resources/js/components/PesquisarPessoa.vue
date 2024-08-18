@@ -17,18 +17,14 @@
       <h2>Resultados:</h2>
       <ul>
         <li v-for="resultado in resultados" :key="resultado.id">
-          <p><strong>Nome:</strong> {{ resultado.nome }}</p>
-          <p><strong>Idade:</strong> {{ resultado.idade }} anos</p>
-          <p><strong>Peso:</strong> {{ resultado.peso }} kg</p>
-          <p><strong>Altura:</strong> {{ resultado.altura }} cm</p>
-          <p><strong>Flexibilidade:</strong> {{ resultado.flexibilidade }} metros</p>
-          <p><strong>Abdominais:</strong> {{ resultado.abdominais }}</p>
-          <p><strong>Corrida 6 Minutos:</strong> {{ resultado.corrida6min }} metros</p>
-          <p><strong>Medicine Ball:</strong> {{ resultado.medicineBall }} cm</p>
-          <p><strong>Salto Horizontal:</strong> {{ resultado.saltoHorizontal }} cm</p>
-          <p><strong>Quadrado:</strong> {{ resultado.quadrado }} segundos</p>
-          <p><strong>Corrida 20 Metros:</strong> {{ resultado.corrida20m }} segundos</p>
-          <!-- Aqui você pode inserir a lógica para exibir a zona percentual -->
+          {{ resultado.nome }} - {{ resultado.idade }} anos<br>
+          Flexibilidade: {{ resultado.flexibilidade }}<br>
+          Abdominais: {{ resultado.abdominais }}<br>
+          Corrida 6 minutos: {{ resultado.corrida6min }}<br>
+          Medicine Ball: {{ resultado.medicineBall }}<br>
+          Salto Horizontal: {{ resultado.saltoHorizontal }}<br>
+          Quadrado: {{ resultado.quadrado }}<br>
+          Corrida 20 metros: {{ resultado.corrida20m }}<br><br>
         </li>
       </ul>
     </div>
@@ -108,18 +104,5 @@ h1 {
 
 .alert {
   margin-top: 20px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 </style>

@@ -1,10 +1,11 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MedidaController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PesquisaController;
 
-// Rota inicial, você pode trocar para a view que desejar
+// Rota inicial
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -14,12 +15,18 @@ Route::get('/medidas', function () {
     return view('medidas');
 });
 
-
 // Rota para salvar as medidas via POST
 Route::post('/medidas', [MedidaController::class, 'store']);
 
-Route::get('/pesquisar', [MedidaController::class, 'pesquisar']);
+// Rota para a view de pesquisa
+Route::get('/pesquisar', function () {
+    return view('pesquisar');
+});
 
+// Rota para API de pesquisa
+Route::get('/api/pesquisar', [PesquisaController::class, 'pesquisar']);
+
+// Rota para calcular percentis
 Route::get('/percentis/{id}', [PesquisaController::class, 'percentis']);
 
 // Rotas de autenticação
