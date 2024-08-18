@@ -51,7 +51,7 @@ export default {
         sexo: 'Sexo:',
         peso: 'Peso (kg):',
         altura: 'Altura (cm):',
-        flexibilidade: 'Flexibilidade (metros):',
+        flexibilidade: 'Flexibilidade (cm):',
         abdominais: 'Abdominais:',
         corrida6min: 'Corrida 6 minutos (metros):', // Nome ajustado para o backend
         medicineBall: 'Medicine Ball (cm):',
