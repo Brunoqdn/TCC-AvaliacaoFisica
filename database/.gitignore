@@ -1,0 +1,12 @@
+*.sqlite*
+# Ignorar diretórios do sistema
+/Ambiente de Impressão/
+/Ambiente de Rede/
+/AppData/
+/Configurações Locais/
+/Cookies/
+/Meus Documentos/
+/Menu Iniciar/
+/Modelos/
+/Recent/
+/SendTo/
