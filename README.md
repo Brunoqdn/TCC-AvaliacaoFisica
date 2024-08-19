@@ -1,4 +1,33 @@
-<<<<<<< HEAD
+# TCC-AvaliacaoFisica
+
+# Sistema de Avaliação Física
+
+Este projeto é um sistema de avaliação física desenvolvido como trabalho final de disciplina. O objetivo principal é permitir a pesquisa de pessoas cadastradas e exibir resultados de avaliações físicas com classificações baseadas em percentis para diversos exercícios físicos.
+
+## Funcionalidades
+
+- **Cadastro de Avaliações Físicas**: Inserção de dados como flexibilidade, abdominais, corrida de 6 minutos, arremesso de medicine ball, salto horizontal, teste do quadrado (agilidade), e corrida de 20 metros.
+- **Pesquisa de Pessoas**: Permite pesquisar por nome de pessoas cadastradas e exibir suas avaliações físicas.
+- **Classificação por Percentis**: O sistema classifica os resultados dos exercícios em zonas de desempenho como "Fraco", "Razoável", "Bom", "Muito Bom" e "Excelência", com base em tabelas de percentis.
+- **Navegação Simples**: Botões para navegação entre as views, incluindo a volta para a página de medidas e logout.
+
+## Tecnologias Utilizadas
+
+- **Frontend**: Vue.js
+- **Backend**: Laravel
+- **Banco de Dados**: MySQL
+- **API**: Axios para comunicação entre o frontend e o backend
+
+## Configuração do Projeto
+
+### Pré-requisitos
+
+- **Node.js** e **npm** ou **yarn**: Certifique-se de que Node.js e npm/yarn estão instalados na sua máquina.
+- **Composer**: Gerenciador de dependências para o PHP.
+- **MySQL**: Um servidor de banco de dados MySQL em execução.
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -66,5 +95,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 =======
-# TCC-AvaliacaoFisica
->>>>>>> a1f2c65d53d6b324120ed6fc0a239a945b12d1bf
+
