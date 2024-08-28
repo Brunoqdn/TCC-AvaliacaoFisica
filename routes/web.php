@@ -10,18 +10,30 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-// Rota para a view de medidas
-Route::get('/medidas', function () {
-    return view('medidas');
-});
+// // Rota para a view de medidas
+// Route::get('/medidas', function () {
+//     return view('medidas');
+// });
 
 // Rota para salvar as medidas via POST
 Route::post('/medidas', [MedidaController::class, 'store']);
 
-// Rota para a view de pesquisa
-Route::get('/pesquisar', function () {
-    return view('pesquisar');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/medidas', function () {
+        return view('medidas');
+    });
 });
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/pesquisar', function () {
+        return view('pesquisar');
+    });
+});
+
+// // Rota para a view de pesquisa
+// Route::get('/pesquisar', function () {
+//     return view('pesquisar');
+// });
 
 // Rota para API de pesquisa
 Route::get('/api/pesquisar', [PesquisaController::class, 'pesquisar']);

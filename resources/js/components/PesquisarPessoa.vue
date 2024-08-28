@@ -712,7 +712,7 @@ avaliarMedicineBall(pessoa) {
         } else if (idade === 9) {
             if (medicineBall < 174.1) return 'Fraco';
             if (medicineBall < 195.8) return 'Razoável';
-            if (medicineBall < 222.1) return 'Bom';
+            if (medicineBall < 222.2) return 'Bom';
             if (medicineBall < 279.5) return 'Muito Bom';
             return 'Excelência';
         } else if (idade === 10) {
@@ -777,8 +777,8 @@ avaliarMedicineBall(pessoa) {
         if (idade === 6) {
             if (saltoHorizontal < 100.1) return 'Fraco';
             if (saltoHorizontal <= 111.6) return 'Razoável';
-            if (saltoHorizontal <= 125.6) return 'Bom';
-            if (saltoHorizontal <= 157.9) return 'Muito Bom';
+            if (saltoHorizontal <= 125.7) return 'Bom';
+            if (saltoHorizontal <= 158.0) return 'Muito Bom';
             return 'Excelência';
         } else if (idade === 7) {
             if (saltoHorizontal < 107.5) return 'Fraco';
@@ -788,19 +788,19 @@ avaliarMedicineBall(pessoa) {
             return 'Excelência';
         } else if (idade === 8) {
             if (saltoHorizontal < 114.7) return 'Fraco';
-            if (saltoHorizontal <= 126.3) return 'Razoável';
-            if (saltoHorizontal <= 139.4) return 'Bom';
+            if (saltoHorizontal <= 126.2) return 'Razoável';
+            if (saltoHorizontal <= 140.1) return 'Bom';
             if (saltoHorizontal <= 170.6) return 'Muito Bom';
             return 'Excelência';
         } else if (idade === 9) {
             if (saltoHorizontal < 122.2) return 'Fraco';
             if (saltoHorizontal <= 133.9) return 'Razoável';
-            if (saltoHorizontal <= 147.9) return 'Bom';
+            if (saltoHorizontal <= 147.8) return 'Bom';
             if (saltoHorizontal <= 178.1) return 'Muito Bom';
             return 'Excelência';
         } else if (idade === 10) {
             if (saltoHorizontal < 129.6) return 'Fraco';
-            if (saltoHorizontal <= 141.8) return 'Razoável';
+            if (saltoHorizontal <= 141.6) return 'Razoável';
             if (saltoHorizontal <= 155.7) return 'Bom';
             if (saltoHorizontal <= 185.9) return 'Muito Bom';
             return 'Excelência';
