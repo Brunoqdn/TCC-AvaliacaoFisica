@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/chart', function () {
+    return view('chart');
+});
+
 // // Rota para a view de medidas
 // Route::get('/medidas', function () {
 //     return view('medidas');

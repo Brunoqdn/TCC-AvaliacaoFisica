@@ -20,6 +20,9 @@ app.component('example-component', ExampleComponent);
 app.component('login-component', LoginComponent);
 app.component('register-component', RegisterComponent);
 app.component('pesquisar-pessoa', PesquisarPessoa);
+app.component('chart-component', ChartComponent);
+
 
 // Montagem do app Vue no elemento com id "app"
 app.mount('#app');
+
