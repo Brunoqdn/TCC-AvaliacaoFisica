@@ -39,7 +39,7 @@
                 <h2 class="h5 mb-0">Adicionar Teste para {{ $student->name }}</h2>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('tests.store', $student->id) }}">
+                <form method="POST" action="{{ route('tests.store', $student->id) }}" novalidate>
                     @csrf
 
                     <!-- Data do Teste -->

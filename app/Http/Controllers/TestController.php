@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\Test;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Client\ResponseSequence;
 
 class TestController extends Controller
 {
@@ -56,6 +57,7 @@ class TestController extends Controller
         'horizontal_jump' => $request->input('horizontal_jump'),
         'square_run' => $request->input('square_run'),
         'run_20m' => $request->input('run_20m'),
+        'student_id' => $student->id
     ]);
 
     // Redireciona com uma mensagem de sucesso

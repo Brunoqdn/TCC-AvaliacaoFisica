@@ -47,7 +47,13 @@
         <h5 class="text-center mb-3 secondary-color">Estatura (mts): <strong>{{ $height ?? 'Não disponível' }}</strong></h5>
         <h5 class="text-center mb-4 secondary-color">IMC: 
             <strong class="primary-color">
-                {{ number_format($weight / (pow($height / 100, 2)), 2) }}
+            <p>
+                @if (!is_numeric($weight) || !is_numeric($height))
+                    Não disponível
+                @else
+                    {{ number_format($weight / (pow($height / 100, 2)), 2) }}
+                @endif
+            </p>
             </strong>
         </h5>
 
@@ -197,6 +203,7 @@
     }
 
     function enviarGraficosParaPDF() {
+
     // Obtenha os dados do aluno e resultados como strings JSON diretamente
     const student = JSON.parse(`{!! json_encode(['name' => $student->name, 'weight' => $weight ?? null, 'height' => $height ?? null]) !!}`);
     const resultados = JSON.parse(`{!! json_encode($resultados ?? []) !!}`);
