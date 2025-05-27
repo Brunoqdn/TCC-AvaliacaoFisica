@@ -103,7 +103,7 @@
     <script>
         function gerarGrafico() {
             const studentId = "{{ $student->id }}"; // Obtém o ID do aluno diretamente
-            const url = `/api/performance/student/${studentId}/all`;
+            const url = `https://if4health.charqueadas.ifsul.edu.br/avalfisica/api/performance/student/${studentId}/all`;
 
             const exercicioMapping = {
                 'abdominals': 'abdominais',
