@@ -34,8 +34,8 @@ return [
     */
     
    'pdf' => [
-    'enabled' => true,
-    'binary' => env('SNAPPY_PDF_BINARY', 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'),
+    'enabled' => true,                      
+    'binary' => env('SNAPPY_PDF_BINARY', 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'), // On linux, change the secund value to /usr/bin/wkhtmltopdf
     'timeout' => false,
     'options' => [
         'enable-javascript' => true,
@@ -50,7 +50,7 @@ return [
     
     'image' => [
         'enabled' => true,
-        'binary' => env('WKHTMLTOPDF_BINARY', '/usr/local/bin/wkhtmltopdf'),
+        'binary' => env('SNAPPY_IMAGE_BINARY', '/usr/local/bin/wkhtmltopdf'),
         'timeout' => false,
         'options' => [],
         'env'     => [],

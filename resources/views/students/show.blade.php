@@ -202,11 +202,22 @@
         return imagensBase64;
     }
 
-    function enviarGraficosParaPDF() {
-
+    async function enviarGraficosParaPDF() {
     // Obtenha os dados do aluno e resultados como strings JSON diretamente
     const student = JSON.parse(`{!! json_encode(['name' => $student->name, 'weight' => $weight ?? null, 'height' => $height ?? null]) !!}`);
     const resultados = JSON.parse(`{!! json_encode($resultados ?? []) !!}`);
+
+        // const request = await fetch("/generate-pdf", {
+        // method: 'POST',
+        // headers: {
+        //     'Content-Type': 'application/json',
+        //     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        // },
+        // body: JSON.stringify({ student, resultados }) // Envia os dados para o backend
+        // })
+        // const response = await request.json();
+        // console.log(response.AQUI);
+        
 
     fetch('/generate-pdf', {
         method: 'POST',
@@ -218,6 +229,7 @@
     })
     .then(response => {
         if (!response.ok) {
+            console.log(response)
             throw new Error('Erro ao gerar PDF');
         }
         return response.blob();
